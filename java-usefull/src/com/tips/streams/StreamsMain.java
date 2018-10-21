@@ -10,5 +10,6 @@ public class StreamsMain {
 		names.stream().forEach(System.out::println);
 		
 		
+		
 	}
 }
