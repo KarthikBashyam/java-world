@@ -23,7 +23,7 @@ public class ParallelStreamsMain {
 													  new Person("Mary Elizebeth",31,Gender.FEMALE));
 				
 				//find first female whose age is greater than 30
-				
+				//parallel will touch many elements other than stana
 				Optional<Person> personParallel = persons.stream()
 					   .parallel()
 					   .filter(ParallelStreamsMain::filterPerson)
@@ -33,7 +33,7 @@ public class ParallelStreamsMain {
 				Optional<Person> personSerial = persons.stream()
 						   .filter(ParallelStreamsMain::filterPerson)
 						   .findFirst();
-					System.out.println("Serial Found : " + personSerial.get().getName());
+				System.out.println("Serial Found : " + personSerial.get().getName());
 				
 		
 	}
