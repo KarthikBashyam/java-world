@@ -1,27 +1,23 @@
 package com.tips.datastructures;
 
-import java.util.Arrays;
-
 public class Mystack<T> {
 
 	private T[] array = null;
 
-	private int INITIAL_CAPACITY = 10;
-
-	private int index = 0;
+	private int index = -1;
 
 	private T min;
 
 	@SuppressWarnings("unchecked")
-	public Mystack() {
-		array = (T[]) new Object[INITIAL_CAPACITY];
+	public Mystack(int size) {
+		array = (T[]) new Object[size];
 	}
 
 	public void push(T element) {
 		if (index > array.length - 1) {
-			array = Arrays.copyOf(array, array.length * INITIAL_CAPACITY);
+			throw new StackOverflowError();
 		}
-		array[index++] = element;
+		array[++index] = element;
 
 	}
 
@@ -38,7 +34,7 @@ public class Mystack<T> {
 
 	public static void main(String[] args) {
 
-		Mystack<Integer> mystack = new Mystack<>();
+		Mystack<Integer> mystack = new Mystack<>(10);
 		mystack.push(1);
 		mystack.push(2);
 		mystack.push(3);
@@ -49,8 +45,6 @@ public class Mystack<T> {
 		mystack.push(8);
 		mystack.push(9);
 		mystack.push(10);
-		mystack.push(11);
-		mystack.push(12);
 
 		System.out.println(mystack.pop());
 		System.out.println(mystack.pop());
@@ -58,6 +52,11 @@ public class Mystack<T> {
 		System.out.println(mystack.pop());
 		System.out.println(mystack.pop());
 		System.out.println(mystack.pop());
+		System.out.println(mystack.pop());
+		System.out.println(mystack.pop());
+		System.out.println(mystack.pop());
+		System.out.println(mystack.pop());		
+
 
 	}
 
