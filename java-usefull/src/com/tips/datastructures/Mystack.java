@@ -1,7 +1,6 @@
 package com.tips.datastructures;
 
 import java.util.Arrays;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class Mystack<T> {
 
@@ -10,6 +9,8 @@ public class Mystack<T> {
 	private int INITIAL_CAPACITY = 10;
 
 	private int index = 0;
+
+	private T min;
 
 	@SuppressWarnings("unchecked")
 	public Mystack() {
@@ -21,17 +22,22 @@ public class Mystack<T> {
 			array = Arrays.copyOf(array, array.length * INITIAL_CAPACITY);
 		}
 		array[index++] = element;
+
 	}
 
-	public T pop() {		
-		if(index < 0) {
+	public T pop() {
+		if (index < 0) {
 			throw new IndexOutOfBoundsException();
-		}		
+		}
 		return array[index--];
 	}
-	
+
+	public T min() {
+		return min;
+	}
+
 	public static void main(String[] args) {
-		
+
 		Mystack<Integer> mystack = new Mystack<>();
 		mystack.push(1);
 		mystack.push(2);
@@ -45,24 +51,22 @@ public class Mystack<T> {
 		mystack.push(10);
 		mystack.push(11);
 		mystack.push(12);
-		
-		
+
 		System.out.println(mystack.pop());
-		System.out.println(mystack.pop()); 
-		System.out.println(mystack.pop()); 
-		System.out.println(mystack.pop()); 
-		System.out.println(mystack.pop()); 
 		System.out.println(mystack.pop());
-		
-	
+		System.out.println(mystack.pop());
+		System.out.println(mystack.pop());
+		System.out.println(mystack.pop());
+		System.out.println(mystack.pop());
+
 	}
-	
-	//Queue
-	//List -- 
-	//Fibonacci series -- 
-	//Palindrome --
-	//SquareRoot
-	//Prime number
-	//Power
+
+	// Queue
+	// List --
+	// Fibonacci series --
+	// Palindrome --
+	// SquareRoot
+	// Prime number
+	// Power
 
 }

@@ -1,6 +1,6 @@
-package com.tips.datastructures;
+package com.patterns.sorting;
 
-public class ArraySort {
+public class SelectionSort {
 
 	public static void main(String[] args) {
 

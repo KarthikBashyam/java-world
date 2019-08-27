@@ -39,6 +39,7 @@ public class Palindrome {
 		}
 	}
 	
+	//recursive
 	public static boolean isPal(String s) {
 		
 		if(s.length() == 0 || s.length() == 1) {
