@@ -11,7 +11,7 @@ public class FibonacciSeries {
 		int n2 = 1;
 		int n3 = 0;
 		Scanner scanner = new Scanner(System.in);
-		//int count = scanner.nextInt();		
+		// int count = scanner.nextInt();
 		int count = 10;
 		// 0,1,1,2,3,5
 
@@ -27,26 +27,24 @@ public class FibonacciSeries {
 		for (int i = 0; i <= 10; i++) {
 			System.out.println(fib(i));
 		}
-		
+
 	}
-	
-	//Memoization
-	private static HashMap<Integer,Integer> cache = new HashMap<>();
-	
+
+	// Memoization
+	private static HashMap<Integer, Integer> cache = new HashMap<>();
+
 	public static int fib(int n) {
 		int returnVal;
 		if (n <= 1) {
 			return n;
-		} else if(cache.containsKey(Integer.valueOf(n)))  {
+		} else if (cache.containsKey(Integer.valueOf(n))) {
 			return cache.get(Integer.valueOf(n));
-		}else {
+		} else {
 			returnVal = fib(n - 1) + fib(n - 2);
 			cache.putIfAbsent(n, returnVal);
 			return returnVal;
 		}
-		
+
 	}
-	
-	
 
 }

@@ -1,12 +1,7 @@
 package com.tips.streams;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Stream;
-
-import com.tips.dto.Gender;
-import com.tips.dto.Person;
 
 public class StreamsMain {
 

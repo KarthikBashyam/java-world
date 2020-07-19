@@ -6,7 +6,7 @@ public class BalancedParanthesis {
 
 	public static void main(String[] args) {
 
-		String exp = "{()}}";
+		String exp = "({}([][]))[]()";
 		System.out.println(isBalanced(exp));
 
 	}
@@ -15,6 +15,10 @@ public class BalancedParanthesis {
 
 		Stack<Character> stack = new Stack<>();
 		char[] chars = exp.toCharArray();
+
+		if (chars[0] == '}' || chars[0] == ']' || chars[0] == ')') {
+			return false;
+		}
 
 		for (char ch : chars) {
 
@@ -26,15 +30,15 @@ public class BalancedParanthesis {
 				stack.push(ch);
 				break;
 			case ')':
-				if (stack.pop() != '(')
+				if (stack.size() > 0 && stack.pop() != '(')
 					return false;
 				break;
 			case '}':
-				if (stack.pop() != '{')
+				if (stack.size() > 0 && stack.pop() != '{')
 					return false;
 				break;
 			case ']':
-				if (stack.pop() != '[')
+				if (stack.size() > 0 && stack.pop() != '[')
 					return false;
 				break;
 

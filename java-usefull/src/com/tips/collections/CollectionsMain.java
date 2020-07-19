@@ -22,7 +22,7 @@ public class CollectionsMain {
 		
 		// To avoid exception pass resolver.
 		Map<Long, Employee> empMap = names.stream()
-				.collect(toMap(Employee::getId, Function.identity(), (e1,e2) -> e1));
+				.collect(toMap(Employee::getId, Function.identity(), (e1,e2) -> e2));
 		empMap.forEach((k,v) -> System.out.println(k +" - "+ v));
 		
 		

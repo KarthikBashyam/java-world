@@ -1,4 +1,4 @@
-package com.tips.datastructures;
+package com.practice.leetcode;
 
 public class SumOfNumber {
 

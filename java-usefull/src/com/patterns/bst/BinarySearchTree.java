@@ -39,5 +39,14 @@ public class BinarySearchTree {
 		}
 
 	}
+	
+	
+	public void delete(int data) {
+		
+		
+		
+	}
+	
+	
 
 }

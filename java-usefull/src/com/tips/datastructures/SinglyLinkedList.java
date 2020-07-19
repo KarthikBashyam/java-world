@@ -1,5 +1,12 @@
 package com.tips.datastructures;
 
+/**
+ * Singly Linked List.
+ * 
+ * @author Karthik Bashyam.
+ *
+ * @param <E>
+ */
 public class SinglyLinkedList<E> {
 
 	private Node<E> head;
@@ -36,7 +43,7 @@ public class SinglyLinkedList<E> {
 
 		Node<E> temp = head;
 		while (temp != null) {
-			System.out.println(temp.getElement());
+			System.out.print(temp.getElement() + "->");
 			temp = temp.next;
 		}
 	}
@@ -44,7 +51,6 @@ public class SinglyLinkedList<E> {
 	public void delete(E element) {
 
 		Node<E> temp = head;
-		Node<E> prev = null;
 
 		if (element.equals(head.getElement())) {
 			head = head.next;
@@ -53,11 +59,8 @@ public class SinglyLinkedList<E> {
 
 		while (temp != null && !temp.getElement().equals(element)) {
 
-			prev = temp;
 			temp = temp.next;
 		}
-
-		prev.next = temp.next;
 
 	}
 
@@ -65,11 +68,15 @@ public class SinglyLinkedList<E> {
 		return head;
 	}
 
+	public void setHead(Node<E> head) {
+		this.head = head;
+	}
+
 	public Node<E> getTail() {
 		return tail;
 	}
 
-	private boolean isEmpty() {
+	public boolean isEmpty() {
 		return size() == 0;
 	}
 
@@ -77,18 +84,47 @@ public class SinglyLinkedList<E> {
 		return size;
 	}
 
+	public void findMiddle() {
+
+		Node<E> sp = this.head;
+		Node<E> fp = this.head;
+
+		while (fp != null && fp.next != null) {
+
+			sp = sp.next;
+			fp = fp.next.next;
+		}
+
+		System.out.println("Middle:" + sp.getElement());
+
+	}
+
 	public static void main(String[] args) {
 
-		SinglyLinkedList<String> list = new SinglyLinkedList<>();
+		SinglyLinkedList<String> list = new SinglyLinkedList<String>();
 		list.addFirst("Hello");
 		list.addLast("World");
-		list.addLast("Data");
-		list.addLast("Structures");
+		list.addLast("List");
 
-		System.out.println(list.getTail().getElement());
 		list.printList();
-		list.delete("Data");
+
+		// Reverse
+		System.out.println("==== REVERSE ===");
+		Node<String> prev = null;
+		Node<String> curr = list.head;
+		Node<String> next = null;
+
+		while (curr != null) {
+
+			next = curr.next;
+			curr.next = prev;
+
+			prev = curr;
+			curr = next;
+		}
+		list.setHead(prev);
 		list.printList();
+
 	}
 
 	// List Node
@@ -111,6 +147,9 @@ public class SinglyLinkedList<E> {
 			return next;
 		}
 
-	}
+		public void setNext(Node<E> next) {
+			this.next = next;
+		}
 
+	}
 }

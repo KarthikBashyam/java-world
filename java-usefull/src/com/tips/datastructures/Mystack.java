@@ -7,10 +7,12 @@ public class Mystack<T> {
 	private int index = -1;
 
 	private T min;
+	
+	private static final int CAPACITY = 10;
 
 	@SuppressWarnings("unchecked")
-	public Mystack(int size) {
-		array = (T[]) new Object[size];
+	public Mystack() {
+		array = (T[]) new Object[CAPACITY];
 	}
 
 	public void push(T element) {
@@ -34,7 +36,7 @@ public class Mystack<T> {
 
 	public static void main(String[] args) {
 
-		Mystack<Integer> mystack = new Mystack<>(10);
+		Mystack<Integer> mystack = new Mystack<>();
 		mystack.push(1);
 		mystack.push(2);
 		mystack.push(3);
