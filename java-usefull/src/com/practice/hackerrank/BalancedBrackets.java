@@ -8,7 +8,7 @@ public class BalancedBrackets {
 
 	public static void main(String[] args) {
 
-		String s = "{[()]}";
+		String s = "[](()";
 
 		List<Character> list = new ArrayList<Character>();
 		Stack<Character> stack = new Stack<Character>();

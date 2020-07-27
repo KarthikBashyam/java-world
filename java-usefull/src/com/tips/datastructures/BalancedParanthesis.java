@@ -6,7 +6,7 @@ public class BalancedParanthesis {
 
 	public static void main(String[] args) {
 
-		String exp = "({}([][]))[]()";
+		String exp = ")";
 		System.out.println(isBalanced(exp));
 
 	}

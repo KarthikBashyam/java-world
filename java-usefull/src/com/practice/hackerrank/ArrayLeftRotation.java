@@ -1,6 +1,6 @@
-package com.practice.hackerrank;
+	package com.practice.hackerrank;
 
-public class LeftRotation {
+public class ArrayLeftRotation {
 
 	public static void main(String[] args) {
 
